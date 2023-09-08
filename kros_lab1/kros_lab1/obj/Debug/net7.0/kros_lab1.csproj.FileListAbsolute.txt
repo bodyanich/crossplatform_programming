@@ -1,0 +1,12 @@
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\bin\Debug\net7.0\kros_lab1.deps.json
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\bin\Debug\net7.0\kros_lab1.dll
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\bin\Debug\net7.0\kros_lab1.pdb
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.csproj.AssemblyReference.cache
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.AssemblyInfoInputs.cache
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.AssemblyInfo.cs
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.csproj.CoreCompileInputs.cache
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.dll
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\refint\kros_lab1.dll
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\kros_lab1.pdb
+C:\Users\Bodyanich\source\repos\kros_lab1\kros_lab1\obj\Debug\net7.0\ref\kros_lab1.dll
