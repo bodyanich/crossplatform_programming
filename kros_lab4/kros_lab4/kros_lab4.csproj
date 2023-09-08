@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="kros_lab1">
+      <HintPath>..\..\kros_lab1\kros_lab1\bin\Debug\net7.0\kros_lab1.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
