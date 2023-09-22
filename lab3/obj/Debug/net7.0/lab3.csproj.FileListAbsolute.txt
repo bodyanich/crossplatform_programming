@@ -1,0 +1,15 @@
+D:\KNU\crossplatform_programming\lab3\bin\Debug\net7.0\lab3.exe
+D:\KNU\crossplatform_programming\lab3\bin\Debug\net7.0\lab3.deps.json
+D:\KNU\crossplatform_programming\lab3\bin\Debug\net7.0\lab3.runtimeconfig.json
+D:\KNU\crossplatform_programming\lab3\bin\Debug\net7.0\lab3.dll
+D:\KNU\crossplatform_programming\lab3\bin\Debug\net7.0\lab3.pdb
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.csproj.AssemblyReference.cache
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.GeneratedMSBuildEditorConfig.editorconfig
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.AssemblyInfoInputs.cache
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.AssemblyInfo.cs
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.csproj.CoreCompileInputs.cache
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.dll
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\refint\lab3.dll
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.pdb
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\lab3.genruntimeconfig.cache
+D:\KNU\crossplatform_programming\lab3\obj\Debug\net7.0\ref\lab3.dll
