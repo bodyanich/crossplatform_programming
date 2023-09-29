@@ -4,7 +4,7 @@ namespace lab3
 {
     internal class Program
     {
-        static TupleTree[] tree;
+        static TupleTree[]? tree;
         static bool draw = false;
         static void Main()
         {
@@ -48,6 +48,8 @@ namespace lab3
         static bool Travel(int head, int begin, int move)
         {
             bool foundWinner = false;
+            int leafNum = 0;
+            int winnerNum = 0;
             for (int i = begin; i < tree.Length; i++)
             {
                 if (foundWinner)
@@ -58,16 +60,26 @@ namespace lab3
                     {
                         foundWinner = true;
                     }
-                    else if (tree[i].Item3 == "+1" && move % 2 == 1)
+                    else if (tree[i].Item3 == "+1")
                     {
-                        foundWinner = true;
+                        if (move % 2 == 1)
+                            foundWinner = true;
+                        winnerNum++;
+                        leafNum++;
                     }
                     else if (tree[i].Item3 == "0")
                     {
                         draw = true;
+                        leafNum++;
                     }
+                    else if (tree[i].Item3 == "-1")
+                        leafNum++;
+                    else
+                        throw new IOException($"Unclear data in {i} row.");
                 }
             }
+            if(leafNum == winnerNum)
+                foundWinner = true;
             return foundWinner;
         }
 
@@ -82,11 +94,24 @@ namespace lab3
                         throw new IOException("File is empty.");
                     }
 
-                    tree = new TupleTree[int.Parse(n) - 1];
-
-                    for (int i = 0; i < int.Parse(n) - 1; i++)
+                    if (!IsNumeric(n))
                     {
-                        string[] input = reader.ReadLine().Split(' ');
+                        WriteError("Number of nodes must be numeric.");
+                        return;
+                    }
+
+                    int nodesNum = int.Parse(n);
+                    tree = new TupleTree[nodesNum - 1];
+
+                    for (int i = 0; i < nodesNum - 1; i++)
+                    {
+                        n = reader.ReadLine();
+                        if (n is null)
+                        {
+                            throw new IOException("Number of nodes is not correct!");
+                        }
+
+                        string[] input = n.Split(' ');
                         if (input[0] == "N")
                         {
                             tree[i] = new TupleTree(input[0], int.Parse(input[1]));
@@ -98,6 +123,11 @@ namespace lab3
                         else { throw new IOException("Unclear data in file."); }
                     }
                 }
+        }
+
+        static bool IsNumeric(string input)
+        {
+            return input.All(char.IsDigit);
         }
 
         static void WriteError(string errorMessage)
