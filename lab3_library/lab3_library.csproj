@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>BBorodiy</PackageId>
+    <Authors>Bohdan Borodiy</Authors>
+    <Company>BohdanBorodiy</Company>
+    <Product>Lab3</Product>
+    <Description>Some descr.</Description>
+    <Title>BorodiyLab3</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+</Project>

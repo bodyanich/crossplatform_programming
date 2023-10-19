@@ -1,0 +1,12 @@
+D:\KNU\crossplatform_programming\lab3_library\bin\Release\net7.0\lab3_library.deps.json
+D:\KNU\crossplatform_programming\lab3_library\bin\Release\net7.0\lab3_library.dll
+D:\KNU\crossplatform_programming\lab3_library\bin\Release\net7.0\lab3_library.pdb
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.csproj.AssemblyReference.cache
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.GeneratedMSBuildEditorConfig.editorconfig
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.AssemblyInfoInputs.cache
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.AssemblyInfo.cs
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.csproj.CoreCompileInputs.cache
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.dll
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\refint\lab3_library.dll
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\lab3_library.pdb
+D:\KNU\crossplatform_programming\lab3_library\obj\Release\net7.0\ref\lab3_library.dll
