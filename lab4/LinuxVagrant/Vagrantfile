@@ -1,0 +1,29 @@
+#class VagrantPlugins::ProviderVirtualBox::Action::Network
+#  def dhcp_server_matches_config?(dhcp_server, config)
+#    true
+#  end
+#end
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.provider "virtualbox" do |vb|
+     vb.gui = false
+     vb.memory = "1024"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y apt-transport-https
+
+      wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+      sudo dpkg -i packages-microsoft-prod.deb
+      sudo apt-get update
+      sudo apt-get install -y dotnet-sdk-5.0
+
+      echo 'export PATH=$PATH:$HOME/.dotnet/tools' >> /home/vagrant/.bash_profile
+      su - vagrant -c "dotnet nuget add source http://localhost:44329/nuget"
+      su - vagrant -c "dotnet tool install --global BBorodiy --version 1.0.3"
+  SHELL
+end

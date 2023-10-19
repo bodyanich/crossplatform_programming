@@ -1,0 +1,8 @@
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab4.exe
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab4.dll
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab4.deps.json
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab4.runtimeconfig.json
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab4.pdb
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\McMaster.Extensions.CommandLineUtils.dll
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab123.dll
+C:\Users\Bodyanich\source\repos\lab4\lab4\bin\Release\net7.0\publish\lab123.pdb
