@@ -1,11 +1,35 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "BBorodiy/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/lab3_library.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/lab3_library.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BBorodiy/1.0.1": {
+      "sha512": "OF75FiaSxrTXXOTTkZeEJSHNjwhWl/vV2MrmY2Ijb6jZJv5OeyBPUaaMuh1kKOujlw2zBQBphuehY04bV9hFrw==",
+      "type": "package",
+      "path": "bborodiy/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "bborodiy.1.0.1.nupkg.sha512",
+        "bborodiy.nuspec",
+        "lib/net7.0/lab3_library.dll"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "BBorodiy >= 1.0.1"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Bodyanich\\.nuget\\packages\\": {},
@@ -33,6 +57,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\KNU\\crossplatform_programming\\LocalRepoForNuget": {},
+        "http://127.0.0.1:44310/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -50,6 +76,12 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+        "dependencies": {
+          "BBorodiy": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -69,5 +101,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://127.0.0.1:44310/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }
