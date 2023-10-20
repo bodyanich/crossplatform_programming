@@ -24,6 +24,6 @@ Vagrant.configure("2") do |config|
 
       echo 'export PATH=$PATH:$HOME/.dotnet/tools' >> /home/vagrant/.bash_profile
       su - vagrant -c "dotnet nuget add source http://localhost:44329/nuget"
-      su - vagrant -c "dotnet tool install --global BBorodiy --version 1.0.3"
+      su - vagrant -c "dotnet tool install --global BBorodiy --version 1.0.5"
   SHELL
 end

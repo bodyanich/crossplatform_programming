@@ -85,7 +85,8 @@ namespace lab4
                 return path;
             else
             {
-                string? labPath = Environment.GetEnvironmentVariable("LAB_PATH");
+                string? labPath = GetEnvVar();
+                
                 Console.WriteLine(labPath);
                 if (!string.IsNullOrEmpty(labPath) && File.Exists(Path.Combine(labPath, "input.txt")))
                     return Path.Combine(labPath, "input.txt");
@@ -106,13 +107,30 @@ namespace lab4
                 return path;
             else
             {
-                string? labPath = Environment.GetEnvironmentVariable("LAB_PATH");
+                string? labPath = GetEnvVar();
                 if (!string.IsNullOrEmpty(labPath))
                     return Path.Combine(labPath, "output.txt");
                 else
                 {
                     return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "output.txt");
                 }
+            }
+        }
+
+        static public string? GetEnvVar()
+        {
+            PlatformID platform = Environment.OSVersion.Platform;
+            if (platform == PlatformID.Unix)
+            {
+                return File.Exists("config.txt") ? File.ReadAllText("config.txt") : null;
+            }
+            else if (platform == PlatformID.Win32NT || platform == PlatformID.Win32S || platform == PlatformID.Win32Windows || platform == PlatformID.WinCE)
+            {
+                return Environment.GetEnvironmentVariable("LAB_PATH", EnvironmentVariableTarget.User);
+            }
+            else
+            {
+                return null;
             }
         }
 
@@ -150,20 +168,21 @@ namespace lab4
                     string? path = pathOption.Value();
                     if (path != null)
                     {
-                        //PlatformID platform = Environment.OSVersion.Platform;
-                        //if (platform == PlatformID.Unix)
-                        //{
-                        //    Environment.SetEnvironmentVariable("LAB_PATH", path, EnvironmentVariableTarget.Process);
-                        //}
-                        //else if (platform == PlatformID.Win32NT || platform == PlatformID.Win32S || platform == PlatformID.Win32Windows || platform == PlatformID.WinCE)
-                        //{
-                        //    Environment.SetEnvironmentVariable("LAB_PATH", path, EnvironmentVariableTarget.User);
-                        //}
-                        //else
-                        //{
-                        //    Console.Error.WriteLine("Error: Unknown OS.");
-                        //}
-                        Environment.SetEnvironmentVariable("LAB_PATH", path);
+                        PlatformID platform = Environment.OSVersion.Platform;
+                        if (platform == PlatformID.Unix)
+                        {
+                            Environment.SetEnvironmentVariable("LAB_PATH", path);
+                            File.WriteAllText("config.txt", path);
+                        }
+                        else if (platform == PlatformID.Win32NT || platform == PlatformID.Win32S || platform == PlatformID.Win32Windows || platform == PlatformID.WinCE)
+                        {
+                            Environment.SetEnvironmentVariable("LAB_PATH", path, EnvironmentVariableTarget.User);
+                        }
+                        else
+                        {
+                            Console.Error.WriteLine("Error: Unknown OS.");
+                        }
+                        Console.WriteLine($"Successfully set LAB_PATH to {path}");
                     }
                     else
                     {
