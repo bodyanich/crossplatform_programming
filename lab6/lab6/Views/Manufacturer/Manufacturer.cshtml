@@ -1,0 +1,26 @@
+﻿@model cross_lab5.Models.ManufacturerModel
+
+<h1>Manufacturer</h1>
+
+<hr />
+
+<form method="post" enctype="multipart/form-data" asp-controller="Manufacturer" asp-action="Manufacturer">
+    <div class="form-group container">
+        <h4>Search by Manufacturer Code:</h4>
+        <textarea id="inputText" class="form-control" rows="1" type="text" class="form-control" id="pinput" asp-for="ManufacturerCodeToSearch"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
+</form>
+
+<hr />
+
+<div>
+    @foreach (var item in Model.Manufacturers)
+    {
+        <div>
+            <h3>Manufacturer code: @item.manufacturer_code</h3>
+            <p>Manufacturer name: @item.manufacturer_name</p>
+            <p>Manufacturer details: @item.manufacturer_details</p>
+        </div>
+    }
+</div>
