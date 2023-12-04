@@ -34,7 +34,7 @@ namespace lab6_RESTful
                 {
                     case "SqlServer":
                         options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
-                        //options.UseSqlServer("Server=tcp:pro-lab3server.database.windows.net,1433;Initial Catalog=lab4_database;Persist Security Info=False;User ID=bohdan;Password=parol_bodya444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                        //options.UseSqlServer("Server=tcp:pro-lab3server.database.windows.net,1433;Initial Catalog=lab4_database;Persist Security Info=False;User ID=bohdan;Password=bohdan;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                         break;
                     case "InMemory":
                         options.UseInMemoryDatabase(configuration.GetConnectionString("InMemoryConnection"));

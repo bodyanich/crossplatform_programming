@@ -20,7 +20,7 @@ namespace cross_lab5
             builder.Services.AddSingleton<Lab123Executor>();
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<AuthDbContext>(options =>
-            options.UseSqlServer("Server=tcp:pro-lab3server.database.windows.net,1433;Initial Catalog=lab3_database;Persist Security Info=False;User ID=bohdan;Password=parol_bodya444;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            options.UseSqlServer("Server=tcp:pro-lab3server.database.windows.net,1433;Initial Catalog=lab3_database;Persist Security Info=False;User ID=bohdan;Password=bohdan;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
             //builder.Services.AddDbContext<AuthDbContext>(options =>
             //    options.UseNpgsql(builder.Configuration.GetConnectionString("Host=db-postgres;Database=postgres_bb;Username=postgres;Password=bohdan")));
