@@ -1,0 +1,40 @@
+﻿@model cross_lab5.Models.BookingModel
+
+<h1>Booking</h1>
+
+<hr />
+
+<form method="post" enctype="multipart/form-data" asp-controller="Booking" asp-action="Booking">
+    <div class="form-group container">
+        <h4>Search by Booking Id:</h4>
+        <textarea id="inputText" class="form-control" rows="1" type="text" class="form-control" id="pinput" asp-for="BookingIdToSearch"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
+</form>
+
+<hr />
+
+<div>
+    @foreach (var item in Model.Bookings)
+    {
+        <div>
+            <h3>Id: @item.BookingId</h3>
+            <p>Date from: @item.date_from</p>
+            <p>Date to: @item.date_to</p>
+            <p>Confirmation letter sent: @item.confirmation_letter_sent_yn</p>
+            <p>Payment_recived: @item.payment_recived_yn</p>
+            <p>Customer Name: @item.CustomerName</p>
+            <p>Customer details: @item.customer_details</p>
+            <p>Booking Status Description: @item.BookingStatusDescription</p>
+            <p>Reg Number: @item.RegNumber</p>
+            <p>Current Milleage: @item.CurrentMilleage</p>
+            <p>Date_mot_due: @item.date_mot_due</p>
+            <p>Manufacturer Name: @item.ManufacturerName</p>
+            <p>Manufacturer Details: @item.ManufacturerDetails</p>
+            <p>Daily hire rate: @item.daily_hire_rate</p>
+            <p>Model name: @item.model_name</p>
+            <p>Vehicle category description: @item.vegicle_category_description</p>
+
+        </div>
+    }
+</div>

@@ -1,0 +1,33 @@
+﻿@model cross_lab5.Models.CustomerModel
+
+<h1>Customer</h1>
+
+<hr />
+
+<form method="post" enctype="multipart/form-data" asp-controller="Customer" asp-action="Customer">
+    <div class="form-group container">
+        <h4>Search by Customer Id:</h4>
+        <textarea id="inputText" class="form-control" rows="1" type="text" class="form-control" id="pinput" asp-for="CustomerIdToSearch"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Search</button>
+</form>
+
+<hr />
+
+<div>
+    @foreach (var item in Model.Customers)
+    {
+        <div>
+            <h3>Customer id: @item.customer_id</h3>
+            <p>Customer name: @item.customer_name</p>
+            <p>Customer details: @item.customer_details</p>
+            <p>Gender: @item.gender</p>
+            <p>Email: @item.customer_email</p>
+            <p>Phone number: @item.customer_phone</p>
+            <p>Address: @item.customer_address</p>
+            <p>Country: @item.customer_country</p>
+            <p>Town: @item.town</p>
+            <p>County: @item.county</p>
+        </div>
+    }
+</div>

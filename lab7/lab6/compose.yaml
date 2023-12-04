@@ -1,0 +1,68 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker compose reference guide at
+# https://docs.docker.com/compose/compose-file/
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      target: final
+    ports:
+      - 8080:80
+    #depends_on:
+    #  - db-postgres
+    #  - db-mysql
+
+  #db-postgres:
+  #  image: postgres
+  #  restart: always
+  #  user: postgres
+  #  secrets:
+  #    - db-postgres-password
+  #  volumes:
+  #    - db-postgres-data:/var/lib/postgresql/data
+  #  environment:
+  #    - POSTGRES_DB=postgres_bb
+  #    - POSTGRES_PASSWORD_FILE=/run/secrets/db-postgres-password
+  #  expose:
+  #    - 5432
+  #  healthcheck:
+  #    test: [ "CMD", "pg_isready" ]
+  #    interval: 10s
+  #    timeout: 5s
+  #    retries: 5
+
+  #db-mysql:
+  #  image: mysql
+  #  restart: always
+  #  environment:
+  #    MYSQL_DATABASE: mysql_bb
+  #    MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db-mysql-root-password
+  #  secrets:
+  #    - db-mysql-root-password
+  #  expose:
+  #    - 3306
+  #  healthcheck:
+  #    test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+  #    interval: 10s
+  #    timeout: 5s
+  #    retries: 5
+
+#volumes:
+#  db-postgres-data:
+#  #db-mysql-data:
+
+#secrets:
+#  db-postgres-password:
+#    file: db/postgres-password.txt
+  #db-mysql-root-password:
+  #  file: db/mysql-root-password.txt
+
+

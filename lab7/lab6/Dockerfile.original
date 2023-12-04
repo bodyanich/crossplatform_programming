@@ -1,0 +1,56 @@
+﻿#
+#FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
+#ARG TARGETARCH
+#EXPOSE 80
+#EXPOSE 443
+#
+#COPY . /source
+#COPY ./ClassLibrary/ClassLibrary.csproj ClassLibrary/
+#RUN dotnet restore "ClassLibrary/ClassLibrary.csproj"
+#
+#WORKDIR /source
+#
+#RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
+    #dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app
+#
+#
+#FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS final
+#WORKDIR /app
+#
+## Copy everything needed to run the app from the "build" stage.
+#COPY --from=build /app .
+#
+#
+#ARG UID=10001
+#RUN adduser \
+    #--disabled-password \
+    #--gecos "" \
+    #--home "/nonexistent" \
+    #--shell "/sbin/nologin" \
+    #--no-create-home \
+    #--uid "${UID}" \
+    #appuser
+#USER appuser
+#
+#ENTRYPOINT ["dotnet", "cross_lab5.dll"]
+
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+COPY ["cross_lab5.csproj", "."]
+RUN dotnet restore "./cross_lab5.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "cross_lab5.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "cross_lab5.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "WebApplication1.dll"]
